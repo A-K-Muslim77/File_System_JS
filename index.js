@@ -1,16 +1,28 @@
-// Sync Write
-const fs = require('fs')
+const fs = require('fs');
 
-fs.writeFileSync("Hello.txt",'Sync hello')
+// Write file
+fs.writeFileSync("Hello.txt", "Sync hello");
 
-// Sync read
+// Read
+if (fs.existsSync("Hello.txt")) {
+    const content = fs.readFileSync("Hello.txt", "utf-8");
+    console.log(content);
+}
 
-const content = fs.readFileSync("Hello.txt","utf-8")
-console.log(content);
+// Update
+fs.appendFileSync("Hello.txt", "\nThis is new line.");
 
-// Sync update in file
+// Delete file
+if (fs.existsSync("Hello.txt")) {
+    fs.unlinkSync("Hello.txt");
+}
 
-fs.appendFileSync("Hello.txt",("\nThis is new line."))
+// Create folder
+if (!fs.existsSync("NewFolder")) {
+    fs.mkdirSync("NewFolder");
+}
 
-// Sync Delete
-fs.unlinkSync("Hello.txt")
+// Delete folder
+if (fs.existsSync("NewFolder")) {
+    fs.rmdirSync("NewFolder");
+}
