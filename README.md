@@ -3,7 +3,7 @@ index.js for Sync--
   Read File,
   Update File,
   Delete File,
-  Create folder,
+  Create Folder,
   Delete Folder
 
   
@@ -12,5 +12,5 @@ async.js for Async--
   Read File,
   Update File,
   Delete File,
-  Create folder,
+  Create Folder,
   Delete Folder 
